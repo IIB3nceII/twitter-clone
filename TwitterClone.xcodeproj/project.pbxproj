@@ -25,7 +25,8 @@
 		D7D01784294C503E007575AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D01783294C503D007575AA /* LoginView.swift */; };
 		D7D01786294C504B007575AA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D01785294C504B007575AA /* RegistrationView.swift */; };
 		D7D01788294C5163007575AA /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D01787294C5163007575AA /* RoundedShape.swift */; };
-		D7D0178A294C595F007575AA /* CustomInputfieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D01789294C595F007575AA /* CustomInputfieldView.swift */; };
+		D7D0178A294C595F007575AA /* CustomInputFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D01789294C595F007575AA /* CustomInputFieldView.swift */; };
+		D7D0178E294C5E15007575AA /* AuthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0178D294C5E15007575AA /* AuthHeaderView.swift */; };
 		D7F6889C294A0C070048540D /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F6889B294A0C070048540D /* MainTabView.swift */; };
 		D7F688A2294A0D360048540D /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F688A1294A0D360048540D /* ExploreView.swift */; };
 		D7F688A5294A0D530048540D /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F688A4294A0D530048540D /* NotificationsView.swift */; };
@@ -52,7 +53,8 @@
 		D7D01783294C503D007575AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D7D01785294C504B007575AA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		D7D01787294C5163007575AA /* RoundedShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
-		D7D01789294C595F007575AA /* CustomInputfieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputfieldView.swift; sourceTree = "<group>"; };
+		D7D01789294C595F007575AA /* CustomInputFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputFieldView.swift; sourceTree = "<group>"; };
+		D7D0178D294C5E15007575AA /* AuthHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHeaderView.swift; sourceTree = "<group>"; };
 		D7F6889B294A0C070048540D /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		D7F688A1294A0D360048540D /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		D7F688A4294A0D530048540D /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -151,11 +153,12 @@
 		D79A88D02949BECE00A1B4BD /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D7D0178B294C5DF1007575AA /* Authentication */,
 				D7D0177E294B4EC6007575AA /* TextArea.swift */,
 				D7D0176A294A3FFD007575AA /* Users */,
 				D79A88D62949D9DA00A1B4BD /* Tweets */,
 				D7D01787294C5163007575AA /* RoundedShape.swift */,
-				D7D01789294C595F007575AA /* CustomInputfieldView.swift */,
+				D7D01789294C595F007575AA /* CustomInputFieldView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -307,6 +310,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		D7D0178B294C5DF1007575AA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D7D0178D294C5E15007575AA /* AuthHeaderView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		D7F6889A294A0BE90048540D /* MainTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,8 +446,9 @@
 				D7D01786294C504B007575AA /* RegistrationView.swift in Sources */,
 				D7D0177C294B4D37007575AA /* NewTweetView.swift in Sources */,
 				D7D01788294C5163007575AA /* RoundedShape.swift in Sources */,
+				D7D0178E294C5E15007575AA /* AuthHeaderView.swift in Sources */,
 				D7D0176C294A400D007575AA /* UserRowView.swift in Sources */,
-				D7D0178A294C595F007575AA /* CustomInputfieldView.swift in Sources */,
+				D7D0178A294C595F007575AA /* CustomInputFieldView.swift in Sources */,
 				D7F6889C294A0C070048540D /* MainTabView.swift in Sources */,
 				D7F688A5294A0D530048540D /* NotificationsView.swift in Sources */,
 				D7D01777294AF7C4007575AA /* UserStatsView.swift in Sources */,

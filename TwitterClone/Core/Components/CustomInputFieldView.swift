@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomInputfieldView: View {
+struct CustomInputFieldView: View {
     @Binding var text: String
     let imageName: String
     let placeholderText: String
@@ -30,8 +30,8 @@ struct CustomInputfieldView: View {
     }
 }
 
-struct CustomInputfieldView_Previews: PreviewProvider {
+struct CustomInputFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomInputfieldView(text: .constant(""), imageName: "envelope", placeholderText: "Email")
+        CustomInputFieldView(text: .constant(""), imageName: "envelope", placeholderText: "Email")
     }
 }
