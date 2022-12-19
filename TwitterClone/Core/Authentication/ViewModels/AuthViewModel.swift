@@ -17,7 +17,15 @@ class AuthViewModel: ObservableObject {
     }
 
     func login(withEmail email: String, password: String) {
-        print("Login with \(email)")
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("Failed to sign in, \(error.localizedDescription)")
+                return
+            }
+
+            guard let user = result?.user else { return }
+            self.userSession = user
+        }
     }
 
     func register(withEmail email: String, password: String, fullName: String, userName: String) {
@@ -30,14 +38,12 @@ class AuthViewModel: ObservableObject {
             guard let user = result?.user else { return }
             self.userSession = user
 
-            print("Registered user successfully!\(self.userSession)")
-
             let data = ["email": email, "userName": userName.lowercased(), "fullName": fullName, "uid": user.uid]
 
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("User date uploaded")
+                    print("User data uploaded")
                 }
         }
     }
