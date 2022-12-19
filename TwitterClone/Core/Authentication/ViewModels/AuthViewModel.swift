@@ -6,6 +6,7 @@
 //
 
 import Firebase
+import FirebaseFirestore
 import Foundation
 
 class AuthViewModel: ObservableObject {
@@ -30,6 +31,19 @@ class AuthViewModel: ObservableObject {
             self.userSession = user
 
             print("Registered user successfully!\(self.userSession)")
+
+            let data = ["email": email, "userName": userName.lowercased(), "fullName": fullName, "uid": user.uid]
+
+            Firestore.firestore().collection("users")
+                .document(user.uid)
+                .setData(data) { _ in
+                    print("User date uploaded")
+                }
         }
+    }
+
+    func signOut() {
+        userSession = nil
+        try? Auth.auth().signOut()
     }
 }
