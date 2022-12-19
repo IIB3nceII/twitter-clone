@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D733E25629508A0700FA4121 /* ProfilePhotoSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733E25529508A0700FA4121 /* ProfilePhotoSelectorView.swift */; };
+		D733E2592950911600FA4121 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D733E2582950911600FA4121 /* ImagePicker.swift */; };
 		D79A88BD2949BCF500A1B4BD /* TwitterCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A88BC2949BCF500A1B4BD /* TwitterCloneApp.swift */; };
 		D79A88BF2949BCF500A1B4BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A88BE2949BCF500A1B4BD /* ContentView.swift */; };
 		D79A88C12949BCF600A1B4BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D79A88C02949BCF600A1B4BD /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D733E25529508A0700FA4121 /* ProfilePhotoSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoSelectorView.swift; sourceTree = "<group>"; };
+		D733E2582950911600FA4121 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D79A88B92949BCF500A1B4BD /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79A88BC2949BCF500A1B4BD /* TwitterCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneApp.swift; sourceTree = "<group>"; };
 		D79A88BE2949BCF500A1B4BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D733E257295090E800FA4121 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D733E2582950911600FA4121 /* ImagePicker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D79A88B02949BCF500A1B4BD = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +123,7 @@
 				D79A88CA2949BE0D00A1B4BD /* Extensions */,
 				D79A88C22949BCF600A1B4BD /* Preview Content */,
 				D79A88CE2949BE8000A1B4BD /* Service */,
+				D733E257295090E800FA4121 /* Utils */,
 			);
 			path = TwitterClone;
 			sourceTree = "<group>";
@@ -303,6 +316,7 @@
 			children = (
 				D7D01783294C503D007575AA /* LoginView.swift */,
 				D7D01785294C504B007575AA /* RegistrationView.swift */,
+				D733E25529508A0700FA4121 /* ProfilePhotoSelectorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -447,12 +461,14 @@
 			files = (
 				D7F688A7294A0D610048540D /* MessagesView.swift in Sources */,
 				D7D01765294A3059007575AA /* ProfileView.swift in Sources */,
+				D733E2592950911600FA4121 /* ImagePicker.swift in Sources */,
 				D79A88BF2949BCF500A1B4BD /* ContentView.swift in Sources */,
 				D7D01773294AF365007575AA /* SideMenuOptionRowView.swift in Sources */,
 				D79A88D82949D9EE00A1B4BD /* TweetsRowView.swift in Sources */,
 				D7D01767294A3713007575AA /* TweetFilterViewModel.swift in Sources */,
 				D79A88D52949D7AF00A1B4BD /* FeedView.swift in Sources */,
 				D7D01771294AF358007575AA /* SideMenuView.swift in Sources */,
+				D733E25629508A0700FA4121 /* ProfilePhotoSelectorView.swift in Sources */,
 				D79A88BD2949BCF500A1B4BD /* TwitterCloneApp.swift in Sources */,
 				D7F688A2294A0D360048540D /* ExploreView.swift in Sources */,
 				D7D0177F294B4EC6007575AA /* TextArea.swift in Sources */,

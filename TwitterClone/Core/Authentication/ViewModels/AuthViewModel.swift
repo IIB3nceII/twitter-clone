@@ -11,6 +11,7 @@ import Foundation
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: Firebase.User?
+    @Published var didAuthenticateUser = false
 
     init() {
         self.userSession = Auth.auth().currentUser
@@ -25,6 +26,7 @@ class AuthViewModel: ObservableObject {
 
             guard let user = result?.user else { return }
             self.userSession = user
+            self.didAuthenticateUser = true
         }
     }
 
@@ -43,13 +45,14 @@ class AuthViewModel: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("User data uploaded")
+                    self.didAuthenticateUser = true
                 }
         }
     }
 
     func signOut() {
         userSession = nil
+        didAuthenticateUser = false
         try? Auth.auth().signOut()
     }
 }

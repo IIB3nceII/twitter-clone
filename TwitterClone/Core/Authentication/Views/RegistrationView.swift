@@ -17,13 +17,17 @@ struct RegistrationView: View {
 
     var body: some View {
         VStack {
+            NavigationLink(destination: ProfilePhotoSelectorView(),
+                           isActive: $viewModel.didAuthenticateUser,
+                           label: {})
+
             AuthHeaderView(title: "Get started", subTitle: "Create your account")
 
             VStack(spacing: 40) {
                 CustomInputFieldView(text: $email, imageName: "envelope", placeholderText: "Email")
                 CustomInputFieldView(text: $userName, imageName: "person", placeholderText: "User name")
                 CustomInputFieldView(text: $fullName, imageName: "person", placeholderText: "Full name")
-                CustomInputFieldView(text: $password, imageName: "lock", placeholderText: "Password")
+                CustomInputFieldView(text: $password, imageName: "lock", placeholderText: "Password", isSecureField: true)
             }
             .padding(32)
 
