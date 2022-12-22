@@ -16,6 +16,8 @@
 		D79A88D52949D7AF00A1B4BD /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A88D42949D7AF00A1B4BD /* FeedView.swift */; };
 		D79A88D82949D9EE00A1B4BD /* TweetsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A88D72949D9EE00A1B4BD /* TweetsRowView.swift */; };
 		D7CAAA7A2954732A0083E757 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CAAA792954732A0083E757 /* ImageUploader.swift */; };
+		D7CAAA7C29547C4E0083E757 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CAAA7B29547C4E0083E757 /* UserService.swift */; };
+		D7CAAA82295495A60083E757 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CAAA81295495A60083E757 /* User.swift */; };
 		D7D01765294A3059007575AA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D01764294A3059007575AA /* ProfileView.swift */; };
 		D7D01767294A3713007575AA /* TweetFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D01766294A3713007575AA /* TweetFilterViewModel.swift */; };
 		D7D0176C294A400D007575AA /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D0176B294A400D007575AA /* UserRowView.swift */; };
@@ -53,6 +55,8 @@
 		D79A88D42949D7AF00A1B4BD /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		D79A88D72949D9EE00A1B4BD /* TweetsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsRowView.swift; sourceTree = "<group>"; };
 		D7CAAA792954732A0083E757 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
+		D7CAAA7B29547C4E0083E757 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		D7CAAA81295495A60083E757 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D7D01764294A3059007575AA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		D7D01766294A3713007575AA /* TweetFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFilterViewModel.swift; sourceTree = "<group>"; };
 		D7D0176B294A400D007575AA /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 				D79A88CA2949BE0D00A1B4BD /* Extensions */,
 				D79A88C22949BCF600A1B4BD /* Preview Content */,
 				D79A88CE2949BE8000A1B4BD /* Service */,
+				D7CAAA7F2954955D0083E757 /* Model */,
 				D733E257295090E800FA4121 /* Utils */,
 			);
 			path = TwitterClone;
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				D7CAAA792954732A0083E757 /* ImageUploader.swift */,
+				D7CAAA7B29547C4E0083E757 /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -213,6 +219,14 @@
 				D79A88D72949D9EE00A1B4BD /* TweetsRowView.swift */,
 			);
 			path = Tweets;
+			sourceTree = "<group>";
+		};
+		D7CAAA7F2954955D0083E757 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D7CAAA81295495A60083E757 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D7D01762294A303E007575AA /* ViewModels */ = {
@@ -464,6 +478,7 @@
 			files = (
 				D7F688A7294A0D610048540D /* MessagesView.swift in Sources */,
 				D7D01765294A3059007575AA /* ProfileView.swift in Sources */,
+				D7CAAA7C29547C4E0083E757 /* UserService.swift in Sources */,
 				D733E2592950911600FA4121 /* ImagePicker.swift in Sources */,
 				D79A88BF2949BCF500A1B4BD /* ContentView.swift in Sources */,
 				D7D01773294AF365007575AA /* SideMenuOptionRowView.swift in Sources */,
@@ -481,6 +496,7 @@
 				D7D01786294C504B007575AA /* RegistrationView.swift in Sources */,
 				D7D0177C294B4D37007575AA /* NewTweetView.swift in Sources */,
 				D7D01788294C5163007575AA /* RoundedShape.swift in Sources */,
+				D7CAAA82295495A60083E757 /* User.swift in Sources */,
 				D7D0178E294C5E15007575AA /* AuthHeaderView.swift in Sources */,
 				D7D0179B294C9F8A007575AA /* AuthViewModel.swift in Sources */,
 				D7D0176C294A400D007575AA /* UserRowView.swift in Sources */,
