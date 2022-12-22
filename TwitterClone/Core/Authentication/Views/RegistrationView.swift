@@ -16,51 +16,56 @@ struct RegistrationView: View {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        VStack {
-            NavigationLink(destination: ProfilePhotoSelectorView(),
-                           isActive: $viewModel.didAuthenticateUser,
-                           label: {})
-
-            AuthHeaderView(title: "Get started", subTitle: "Create your account")
-
-            VStack(spacing: 40) {
-                CustomInputFieldView(text: $email, imageName: "envelope", placeholderText: "Email")
-                CustomInputFieldView(text: $userName, imageName: "person", placeholderText: "User name")
-                CustomInputFieldView(text: $fullName, imageName: "person", placeholderText: "Full name")
-                CustomInputFieldView(text: $password, imageName: "lock", placeholderText: "Password", isSecureField: true)
-            }
-            .padding(32)
-
-            Button {
-                viewModel.register(withEmail: email, password: password, fullName: fullName, userName: userName)
-            } label: {
-                Text("Sign Up")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(width: 340, height: 50)
-                    .background(Color(.systemBlue))
-                    .clipShape(Capsule())
-                    .padding()
-                    .shadow(color: .gray.opacity(0.5), radius: 100, x: 0, y: 0)
-            }
-
-            Spacer()
-
-            Button {
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                HStack {
-                    Text("Already have an account?")
-                        .font(.footnote)
-
-                    Text("Sign In")
-                        .font(.footnote)
-                        .fontWeight(.semibold)
+        NavigationStack {
+            VStack {
+                //            NavigationLink(destination: ProfilePhotoSelectorView(),
+                //                           isActive: $viewModel.didAuthenticateUser,
+                //                           label: {})
+                
+                AuthHeaderView(title: "Get started", subTitle: "Create your account")
+                
+                VStack(spacing: 40) {
+                    CustomInputFieldView(text: $email, imageName: "envelope", placeholderText: "Email")
+                    CustomInputFieldView(text: $userName, imageName: "person", placeholderText: "User name")
+                    CustomInputFieldView(text: $fullName, imageName: "person", placeholderText: "Full name")
+                    CustomInputFieldView(text: $password, imageName: "lock", placeholderText: "Password", isSecureField: true)
                 }
+                .padding(32)
+                
+                Button {
+                    viewModel.register(withEmail: email, password: password, fullName: fullName, userName: userName)
+                } label: {
+                    Text("Sign Up")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(width: 340, height: 50)
+                        .background(Color(.systemBlue))
+                        .clipShape(Capsule())
+                        .padding()
+                }
+                .shadow(color: .gray.opacity(0.5), radius: 100, x: 0, y: 0)
+                
+                Spacer()
+                
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    HStack {
+                        Text("Already have an account?")
+                            .font(.footnote)
+                        
+                        Text("Sign In")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                    }
+                }
+                .padding(.bottom, 32)
             }
-            .padding(.bottom, 32)
+            .ignoresSafeArea()
+            .navigationDestination(isPresented: $viewModel.didAuthenticateUser) {
+                ProfilePhotoSelectorView()
+            }
         }
-        .ignoresSafeArea()
     }
 }
 
