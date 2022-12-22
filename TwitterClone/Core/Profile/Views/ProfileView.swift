@@ -5,33 +5,29 @@
 //  Created by Bence Papp on 2022. 12. 14..
 //
 
+import Kingfisher
 import SwiftUI
 
 struct ProfileView: View {
     @State private var selectionFilter: TweetFilterViewModel = .tweets
     @Environment(\.presentationMode) var mode
     @Namespace var animation
+    private let user: User
+
+    init(user: User) {
+        self.user = user
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
             headerView
-
             actionButtons
-
             userInfoDetails
-
             tweetFilterBar
-
             tweetsView
-
             Spacer()
         }
-    }
-}
-
-struct ProfileView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileView()
+        .navigationBarHidden(true)
     }
 }
 
@@ -48,10 +44,13 @@ extension ProfileView {
                         .resizable()
                         .frame(width: 20, height: 16)
                         .foregroundColor(.white)
-                        .offset(x: 16, y: 12)
+                        .offset(x: 12, y: -4)
                 }
 
-                Circle()
+                KFImage(URL(string: user.profileImageUrl))
+                    .resizable()
+                    .scaledToFill()
+                    .clipShape(Circle())
                     .frame(width: 72, height: 72)
                     .offset(x: 16, y: 24)
             }
@@ -83,14 +82,14 @@ extension ProfileView {
     var userInfoDetails: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text("Bela Kathi")
+                Text(user.fullName)
                     .font(.title2).bold()
 
                 Image(systemName: "checkmark.seal.fill")
                     .foregroundColor(Color(.systemBlue))
             }
 
-            Text("@joker")
+            Text("@\(user.userName)")
                 .font(.subheadline)
                 .foregroundColor(.gray)
 
