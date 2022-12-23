@@ -5,31 +5,41 @@
 //  Created by Bence Papp on 2022. 12. 14..
 //
 
+import Kingfisher
 import SwiftUI
 
 struct TweetsRowView: View {
+    let tweet: Tweet
+
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .top, spacing: 12) {
-                Circle()
-                    .frame(width: 56, height: 56)
-                    .foregroundColor(Color(.systemBlue))
+                if let image = tweet.user?.profileImageUrl {
+                    KFImage(URL(string: image))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 56, height: 56)
+                        .clipShape(Circle())
+
+                } else {
+                    Circle()
+                        .frame(width: 56, height: 56)
+                        .foregroundColor(Color(.systemBlue))
+                }
 
                 VStack(alignment: .leading, spacing: 4) {
-                    HStack {
-                        Text("Bruce Wayne")
-                            .font(.subheadline).bold()
+                    if let user = tweet.user {
+                        HStack {
+                            Text(user.fullName)
+                                .font(.subheadline).bold()
 
-                        Text("@batman")
-                            .foregroundColor(.gray)
-                            .font(.caption)
-
-                        Text("2w")
-                            .foregroundColor(.gray)
-                            .font(.caption)
+                            Text("@\(user.userName)")
+                                .foregroundColor(.gray)
+                                .font(.caption)
+                        }
                     }
 
-                    Text("ndljnljdnf;b;adknbfdnanbfnbkfmdbadnf sandlj f ndas jndsajn d;;sn;sa nas ndd jasnsj!")
+                    Text(tweet.caption)
                         .font(.subheadline)
                         .multilineTextAlignment(.leading)
                 }
@@ -62,11 +72,5 @@ struct TweetsRowView: View {
             Divider()
         }
         .padding()
-    }
-}
-
-struct TweetsRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetsRowView()
     }
 }
